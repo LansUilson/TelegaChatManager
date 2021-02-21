@@ -36,6 +36,6 @@ async def banlist(message: types.Message, regexp_command):
 			reason = f". Причина:{i['reason']}"
 		
 		id = pre(i['id'])
-		msg += f"{c}. Пользователь: [{await utils.getNameDB(user)}](tg://user?id={i['id']}). ID: {id}\nЗаблокирован: {banto}{reason}\n"
+		msg += f"{c}. Пользователь: [{await utils.getName(user)}](tg://user?id={i['id']}). ID: {id}\nЗаблокирован: {banto}{reason}\n"
 	
 	return await message.answer(msg, parse_mode='Markdown', disable_notification = True)
