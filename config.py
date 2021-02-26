@@ -1,5 +1,5 @@
 # Token from @botfather #
-API_TOKEN = ""
+API_TOKEN = "1234:abcd"
 
 # Data from the database #
 DATADB = {
@@ -7,7 +7,7 @@ DATADB = {
 	"host": "", 
 	"database": "", 
 	"password": "", 
-	"port": 
+	"port": 5432
 }
 
 # ---------Settings--------- #

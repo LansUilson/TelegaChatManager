@@ -199,7 +199,7 @@ class Helper:
 	# Обновление БД через какое-то время #
 	def updateDB(self):
 		logging.info("DATABASE UPDATED")
-		threading.Timer(600.0, Helper.updateDB, args=[self]).start()
+		threading.Timer(10.0, Helper.updateDB, args=[self]).start()
 
 		query = ''
 		for i in data:
