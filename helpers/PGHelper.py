@@ -39,13 +39,13 @@ class Helper:
 		global data
 
 		schemas = self.conn.run("""SELECT '' || schema_name || '' AS query 
-														FROM information_schema.schemata
-														WHERE schema_name IN
-														(
-														    SELECT schema_name 
-														    FROM information_schema.schemata
-														    WHERE schema_name NOT LIKE 'pg_%' AND schema_name != 'information_schema'
-														);"""
+					   FROM information_schema.schemata
+					   WHERE schema_name IN
+					   (
+					 	SELECT schema_name 
+						FROM information_schema.schemata
+						WHERE schema_name LIKE 'sc%'
+					   );"""
 		)
 
 		query = ""
@@ -199,7 +199,7 @@ class Helper:
 	# Обновление БД через какое-то время #
 	def updateDB(self):
 		logging.info("DATABASE UPDATED")
-		threading.Timer(10.0, Helper.updateDB, args=[self]).start()
+		threading.Timer(600.0, Helper.updateDB, args=[self]).start()
 
 		query = ''
 		for i in data:
